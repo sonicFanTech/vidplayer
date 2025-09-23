@@ -16,4 +16,5 @@ Added a progress Loading Window that show only when you open More then 10 Files 
 Added the New About Window - v2.0.6
 
 updated the License Agreement, made the License and Features / Update Log Tab Load Text from a File, NO CODE NEEDED FOR SAID TEXT - v2.0.6.1
+
 Added Discord RPC, Changed the default volume to 50.0 - v2.0.7
