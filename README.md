@@ -1,11 +1,19 @@
-vidplayer Features
-------------------
+Features / Update Log
+=======================
 
-1. Open and play MP3/WAV/OGG/FLAC Files [Can open and play more then one file in v2.0.4, Also has a Playlist]
-2. Can Pause/Resume, and stop, Audio files
-3. Volume control [is Braken in v2.0.4]
-4. Has a Seek bar with elapsed/remaining time
-5. Has a Dark/Light/System theme settting [This setting is in the New Settings Window from v2.0.3, but is in the View Menu Bar in older versions, NOT IN V1.0 CUZ THAT FIRST VERSION WAS MADE IN Python 3.11 3 Years ago[
-6. Has a Recently played files menu (persistent) [uses a .JSON File to save this Data]
+Program Re-Wright in Python 3.12+ - v2.0.0
 
-More Features May be added later on
+Player UI Re-Done Again, Added Light/Dark Mode Feature, Added recent Files Feature - v2.0.1
+
+Added Art-Work Show Support, Added a Settings Window, Changed how the volume Slider works [Broke it], Added Playlist Support - v2.0.2
+
+Added Auto-Play Next File in Playlist Feature [Build NOT Working, Not Released to the Public] - v2.0.3
+
+Fixed Auto-play Next file in Playlist Feature, Added more settings to the Settings Window - v2.0.4
+
+Added a progress Loading Window that show only when you open More then 10 Files - v2.0.5
+
+Added the New About Window - v2.0.6
+
+updated the License Agreement, made the License and Features / Update Log Tab Load Text from a File, NO CODE NEEDED FOR SAID TEXT - v2.0.6.1
+Added Discord RPC, Changed the default volume to 50.0 - v2.0.7
