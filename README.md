@@ -23,3 +23,5 @@ Added a Discord Rich Presence toggle in Settings (enables/disables RPC at runtim
 
 added External artwork persistence across restarts [saved to artmap.json], added Prev / Next buttons in the fullscreen overlay, Overlay auto-hide after a few seconds of inactivity and reappear on mouse move, Also keeps the "choose external artwork when embedded missing" flow, but now it persists the choice immediately. - v2.0.8.1
 
+v2.0.9 is coming, it's in a BETA Stage rn
+
