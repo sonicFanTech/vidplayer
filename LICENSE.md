@@ -1,7 +1,9 @@
-vidplayer License Agreement
+UPDATED vidplayer License Agreement
 ============================
 
 Copyright (c) 2025 [sonic Fan Tech/sonic Fan Games]
+
+THIS SOFTWARE IS NOW OPEN SOURCE, AND YOU OF THIS SO NOW MAY MAKE FORKESFTWARE, YOU NOW MAY ADD YOUR OWN FEATURES, HOWEVER, YOU MUST GET PERMISSION FROM THE CREATOR IN ORDER TO USE THE PROVIDED SOURCE CODE, YOU MAY NOT RESALE, OR may not be bundled with or distributed alongside any oVEN IF IT'S YOUR ther products without prior written permission, EOWN FORKE OF THIS SOFTWARE, THE CRATOR OF THIS SOFTWARE IS LETING YOU USE THE PROVIDED SOURCE CODE, BUT NEEDS PERMISSION, IF YOU HAVE ANY QUESTIONS OR CONCERRNS ABOUT THIS, EULA [End user License Agreement]. THEN PLEASE E-MAIL THE SOFTWARE CRATOR AT: sonicfan1348@gmail.com
 
 1. Grant of Use
 ---------------
