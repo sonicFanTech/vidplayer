@@ -15,7 +15,7 @@ Added a progress Loading Window that show only when you open More then 10 Files 
 
 Added the New About Window - v2.0.6
 
-updated the License Agreement, made the License and Features / Update Log Tab Load Text from a File, NO CODE NEEDED FOR SAID TEXT - v2.0.6.1
+updated the License Agreement, made the License and Features / Update Log Tab Load Text from a File, NO CODE NEEDED FOR SAID TEXT, Added a Auto-Check for updates Feature at start up, Added a Check for updates button to the About Menu - v2.0.6.1
 
 Added Discord RPC, Changed the default volume to 50.0 - v2.0.7
 
@@ -23,5 +23,4 @@ Added a Discord Rich Presence toggle in Settings (enables/disables RPC at runtim
 
 added External artwork persistence across restarts [saved to artmap.json], added Prev / Next buttons in the fullscreen overlay, Overlay auto-hide after a few seconds of inactivity and reappear on mouse move, Also keeps the "choose external artwork when embedded missing" flow, but now it persists the choice immediately. - v2.0.8.1
 
-v2.0.9 is coming, it's in a BETA Stage rn
-
+Re-placed the GUI [tkinter] With [pySide6 - Qt], [THE NEW GUI MAY NOT WORK RIGHT ON WINDOWS 10, THE NEW GUI WITH pySide6 WAS MADE FOR WINDOWS 11], Added a New Tool in the Tools Menu called, File info [Shows File metadata like, File Name, File Type / Extension, File Size (MB / KB), File Location (full path), Date & Time of Creation, Artist, Album, Year (if available), Track Length, Bitrate (if available), Copyright (if present in tags), Artwork (embedded or external), If no artwork → text message: “No Artwork Found”], Moved the Full Screen art-work from Tools menu → to the View menu (right below Playlist), Shortcut keys and functionality remain unchanged, Added a New them called Aero Glass, made to look like the Windows 7 Aero Glass them/Effects [this them may get updates to make it look better] - v2.0.9 BETA
