@@ -47,7 +47,7 @@ pip install PySide6 pygame mutagen Pillow requests pypresence
 
 you Must have Python 3.13.9 x64 installed on your System 
 
-[if you don't have it, Here's the download Link: https://www.python.org/ftp/python/3.13.9/python-3.13.9-amd64.exe, After it downloads, run the setup wizard, Check the 2 Check Boxes at the bottom of the setup wizard, the Add Python.ex to PATH & use Admin Privileges when installing py.exe, then choose the Customize installation option, Don't uncheck any of the Check boxes, and then click Next, on the next Screen, Check the install Python 3.13 for all users, don't uncheck the 3 Check boxes under that, you can Check the other Check boxes if you so wish to, it's not gonna brake anything]
+[if you don't have it, Here's the download Link: https://www.python.org/ftp/python/3.13.9/python-3.13.9-amd64.exe, After it downloads, run the setup wizard, Check the 2 Check Boxes at the bottom of the setup wizard, the Add Python.exe to PATH & use Admin Privileges when installing py.exe, then choose the Customize installation option, Don't uncheck any of the Check boxes, and then click Next, on the next Screen, Check the install Python 3.13 for all users, don't uncheck the 3 Check boxes under that, you can Check the other Check boxes if you so wish to, it's not gonna brake anything]
 
 to Run the .py version of vidplayer.  [.py, the Source code, the non-pre-compiled version] - open CMD [command prompt], and Run the following command.
 
