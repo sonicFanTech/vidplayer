@@ -66,24 +66,28 @@ to Build the .py File into a .EXE File, you can use the provided Python compiler
 Here's the list of Command to use with the compiler
 
 Commands:
-  help, ?                 Show this help text
-  list                    Show discovered Python installations
-  active                  Show active Python (the Python running this script)
-  build <script> [opts]   Build .py -> .exe
-      options:
-         --python <ver_or_path>   Python identifier (version like 3.8 or a full path to python.exe)
-         --arch x86|x64           Target architecture (uses interpreter that matches)
-         --icon <path>            Optional icon file (.ico)
-         --name <exename>         Output exe name
-         -c                       Show pip install output (verbose)
-         -BC                      Show build output from PyInstaller
-  install_py <version> [x86|x64]   Download & install Python (host must be Windows)
-  check_pyinstaller <python>  Check/install PyInstaller for chosen interpreter
-  exit, quit              Exit this tool
-  run <commandline>       Run a shell command (useful for advanced users)
+---------
+help, ?                 Show this help text
+list                    Show discovered Python installations
+active                  Show active Python (the Python running this script)
+build <script> [opts]   Build .py -> .exe
+--------
+options:
+--python <ver_or_path>   Python identifier (version like 3.8 or a full path to python.exe)
+--arch x86|x64           Target architecture (uses interpreter that matches)
+--icon <path>            Optional icon file (.ico)
+--name <exename>         Output exe name
+-c                       Show pip install output (verbose)
+-BC                      Show build output from PyInstaller
+
+install_py <version> [x86|x64]   Download & install Python (host must be Windows)
+check_pyinstaller <python>  Check/install PyInstaller for chosen interpreter
+exit, quit              Exit this tool
+run <commandline>       Run a shell command (useful for advanced users)
+----------
 Examples:
-  build myscript.py --python 3.8 --arch x86 --icon C:\icon.ico
-  python pybuilder.py build myscript.py --python "C:\Python38-32\python.exe" --arch x86
+build myscript.py --python 3.8 --arch x86 --icon C:\icon.ico
+python pybuilder.py build myscript.py --python "C:\Python38-32\python.exe" --arch x86
 
   Quick start
   ===========
