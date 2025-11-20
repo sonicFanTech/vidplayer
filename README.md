@@ -1,3 +1,9 @@
+Planed updates
+--------------
+updates for v2.0.9 BETA 4.2
+
+1. Add CD Support [the user will be able to Load any Audio CD within vidplayer, vidplayer will fist Check for FFmpeg in the bin Folder, if it's Missing, it'll show some text saying FFmpeg is missing and that it's needed to load/play Audio CDs, if FFmpeg is Found, once the      user selects the CD/DVD Disc Drive where the Audio CD is in, vidplayer then will use FFmpeg to Rip the Data from the Disc to make TEMP Audio Files in a Folder next to the main EXE called "Ripped CDA", the Ripped CDA Folder and TEMP Audio files won't Auto be Deleted just     in case the user wants to Save them and put the Files somewhere else so the user doesn't have to Load/Rip the CD Again]
+
 About VidPlayer
 ===============
 A fast, clean audio player for Windows built with PySide6. VidPlayer focuses on the essentials—playlists, drag-and-drop, double-click to play, and a nostalgic Windows 7-style Aero Glass theme—wrapped in a modern UI. It includes full-screen artwork, rich file info, recent files, and an in-app updater that can download any release asset (EXE/ZIP/7z/etc.) with a progress bar.
