@@ -1,142 +1,385 @@
-Planed updates
---------------
-updates for v2.0.9 BETA 4.2
-
-1. Add CD Support [the user will be able to Load any Audio CD within vidplayer, vidplayer will First Check for FFmpeg in the bin Folder, if it's Missing, it'll show some text saying FFmpeg is missing and that it's needed to load/play Audio CDs, if FFmpeg is Found, once the      user selects the CD/DVD Disc Drive where the Audio CD is in, vidplayer then will use FFmpeg to Rip the Data from the Disc to make TEMP Audio Files in a Folder next to the main EXE called "Ripped CDA", the Ripped CDA Folder and TEMP Audio files won't Auto be Deleted just     in case the user wants to Save them and put the Files somewhere else so the user doesn't have to Load/Rip the CD Again, 2, vidplayer can Also do direct CD playback via VLC / Windows APIs, vidplayer will use VLCs DLL Files for Load/PlayBack, No ripping, if vidplayer can't find VLCs DLLs in bin/VLCLibs/, then the program will just Rip the Data from the Disc, THIS IS ACTIVELY BEING WORKED AND TESTED ON AT THIS TIME, THERE MAY BE BUGS AND ERRORS]
-ACTIVELY WORKING ON THIS BETA
-
 About VidPlayer
 ===============
-A fast, clean audio player for Windows built with PySide6. VidPlayer focuses on the essentials—playlists, drag-and-drop, double-click to play, and a nostalgic Windows 7-style Aero Glass theme—wrapped in a modern UI. It includes full-screen artwork, rich file info, recent files, and an in-app updater that can download any release asset (EXE/ZIP/7z/etc.) with a progress bar.
+VidPlayer is a fast, clean audio player for Windows built with **Python + PySide6**.  
+It focuses on the essentials—playlists, drag-and-drop, double-click to play—and a nostalgic **Windows 7-style Aero Glass** theme wrapped in a modern UI.
+
+VidPlayer includes:
+
+- Full-screen artwork view
+- Detailed file info
+- Recent files
+- Discord Rich Presence (optional)
+- In-app updater that can download any release asset (EXE/ZIP/7z/etc.) with a progress bar
+- Experimental **Audio CD playback & ripping** support
+
+---
 
 Highlights
 ----------
-Windows 7-style Aero Glass theme (with proper enable/disable logic)
-
-Drag & drop files into the main window or playlist
-
-Double-click to play (open files directly when VidPlayer is associated or via command line)
-
-Batch add dialog for large imports (shows each file + progress bar, auto-closes)
-
-Playlist save/load (.vpl / JSON)
-
-Full-screen artwork view with transport controls
-
-File Info panel (length, bitrate, tags, dates, size, location, artwork)
-
-Recent Files menu
-
-Discord Rich Presence (optional)
-
-In-app updater: checks GitHub Releases and can download assets directly with progress
-
-Config & data saved next to the EXE when bundled (PyInstaller-safe)
+- Windows 7-style **Aero Glass theme** (with proper enable/disable logic)
+- Drag & drop files into the main window or playlist
+- Double-click to play:
+  - Open files directly when VidPlayer is associated with audio types
+  - Or pass a file via command line to VidPlayer.exe
+- Batch add dialog for large imports (shows each file + progress, auto-closes)
+- Playlist save/load (`.vpl` / JSON)
+- Full-screen artwork view with transport controls
+- File Info dialog (length, bitrate, tags, dates, size, location, artwork)
+- Recent Files menu (with automatic cleanup)
+- Discord Rich Presence toggle in Settings
+- In-app updater:
+  - Checks GitHub Releases
+  - Can download **any** asset type directly with a progress bar
+- All config/data (`config.json`, `recents.json`, `artmap.json`) saved next to the EXE when bundled (PyInstaller-safe)
 
 Supported formats
 -----------------
-.mp3, .wav, .ogg, .flac, .m4a, .aac, .wma
-(Availability of features like precise seeking may vary by format/codec.)
+- **Audio formats:** `.mp3`, `.wav`, `.ogg`, `.flac`, `.m4a`, `.aac`, `.wma`  
+  (Availability of features like precise seeking may vary by format/codec.)
+
+Audio CD Support (NEW in v2.0.9 BETA 4.2)
+-----------------------------------------
+VidPlayer can now work with **Audio CDs** in two ways:
+
+1. **Option 1 – Rip Audio CD to files**
+   - Uses `cdda2wav` (preferred) or `cdparanoia` if available.
+   - Rips tracks into a temporary folder and saves them into a **`Ripped CDA`** folder next to VidPlayer.
+   - Lets you choose an output format:
+     - WAV (PCM)
+     - MP3 (LAME)
+     - OGG (Vorbis)
+     - FLAC (lossless)
+   - If a compressed format is chosen, VidPlayer uses **ffmpeg** (from `bin/ffmpeg.exe` or system PATH) to transcode.
+   - Progress dialogs for:
+     - Ripping from the CD drive
+     - Converting tracks with ffmpeg
+   - Option to automatically add the ripped tracks to the current playlist.
+   - Temporary `.inf` files created by `cdda2wav` are cleaned up after ripping.
+
+2. **Option 2 – Play Audio CD directly with VLC (experimental)**
+   - Uses **python-vlc** + local VLC libraries (`bin/VLCLibs`).
+   - Opens a small Audio CD dialog with **Play / Pause / Stop** controls.
+   - Completely separate from the main playlist playback.
+   - Controlled by a setting: **“Use VLC for Audio CD playback (experimental)”**.
+   - When enabled, “Play Audio CD…” uses VLC playback instead of ripping.
+
+**Note:**  
+You must provide the external tools yourself:
+
+- `cdda2wav.exe` (or `cdparanoia`) in the `bin` folder or in your PATH  
+- `ffmpeg.exe` in `bin` or in your PATH (for MP3/OGG/FLAC output)  
+- VLC runtime DLLs in `bin/VLCLibs` for VLC-based Audio CD playback  
+- `python-vlc` installed for the .py version
+
+---
 
 Themes & Settings
 -----------------
-Themes: Light, Dark, System Default, Aero Glass
+**Themes:**
 
-“Enable Aero Glass” is only active when the Aero Glass theme is selected
+- Light
+- Dark
+- System Default
+- Aero Glass
 
-Options: Always on top, Autoplay next, Resume last track/position, Auto-load last playlist, Discord RPC
+**Aero Glass:**
 
-Install / Run
-=============
-open CMD [command prompt] and Run the following commad to install the Dependencies [Modules/Packages]
+- The “Enable Aero Glass effect” checkbox only applies when the **Aero Glass** theme is selected.
+- When enabled, the main window uses a Windows-7-style glass look with gradients and rounded corners.
 
-pip install PySide6 pygame mutagen Pillow requests pypresence
+**Other options:**
 
-you Must have Python 3.13.9 x64 installed on your System 
+- Always on top
+- Autoplay next track in playlist
+- Resume last track & position on startup
+- Auto-load last playlist on startup
+- Discord Rich Presence (on/off)
+- Use VLC for Audio CD playback (experimental)
+- Clear Recent Files
 
-[if you don't have it, Here's the download Link: https://www.python.org/ftp/python/3.13.9/python-3.13.9-amd64.exe, After it downloads, run the setup wizard, Check the 2 Check Boxes at the bottom of the setup wizard, the Add Python.exe to PATH & use Admin Privileges when installing py.exe, then choose the Customize installation option, Don't uncheck any of the Check boxes, and then click Next, on the next Screen, Check the install Python 3.13 for all users, don't uncheck the 3 Check boxes under that, you can Check the other Check boxes if you so wish to, it's not gonna brake anything]
+---
 
-to Run the .py version of vidplayer.  [.py, the Source code, the non-pre-compiled version] - open CMD [command prompt], and Run the following command.
+Install / Run (Source Version)
+==============================
+You only need this section if you want to run the **.py** source directly.  
+If you’re using the pre-built EXE from Releases, you don’t need Python installed.
 
-Python [THE NAME OF THE .PY FILE] [Command EXAMP: Python vidplayer_v2.0.9-BETA4_1.py, you must be in the Directory where the .py file is]
+### 1. Install Python
 
-Build Source code
-=================
-to Build the .py File into a .EXE File, you can use the provided Python compiler Program [Made in Python 3.13.9]
+VidPlayer is currently targeted at **Python 3.13.9 x64**.
 
-Here's the list of Command to use with the compiler
+Download Python 3.13.9 x64 from:
 
-Commands:
----------
-help, ?                 Show this help text
-list                    Show discovered Python installations
-active                  Show active Python (the Python running this script)
-build <script> [opts]   Build .py -> .exe
+- https://www.python.org/ftp/python/3.13.9/python-3.13.9-amd64.exe
+
+During installation:
+
+1. **On the first screen:**
+   - Check:
+     - “Add python.exe to PATH”
+     - “Use admin privileges when installing py.exe”
+   - Choose **“Customize installation”**.
+2. **On the Optional Features screen:**
+   - Leave all checkboxes enabled, then click **Next**.
+3. **On the Advanced Options screen:**
+   - Check **“Install for all users”**.
+   - Leave the three checkboxes underneath it enabled.
+   - (Optional) Enable any extra checkboxes you want; they won’t break anything.
+
+### 2. Install required Python packages
+
+Open **Command Prompt** and run:
+
+bash
+----
+pip install PySide6 pygame mutagen Pillow requests pypresence python-vlc
+
+python-vlc is optional but required for VLC-based Audio CD playback.
+
+3. Run VidPlayer from source
+----------------------------
+From Command Prompt, in the folder where your .py file is:
+
+python vidplayer_v2.0.9-BETA4_2.py
+
+(Replace the filename with whatever your source file is named.)
+
+You can also pass a file on the command line:
+python vidplayer_v2.0.9-BETA4_2.py "D:\Music\song.mp3"
+
+
+Build Source Code to .EXE
+-------------------------
+A helper Python compiler tool (written for Python 3.13.9) is included.
+It wraps PyInstaller and makes it easier to build 32-bit or 64-bit EXEs.
+
+From Command Prompt:
+
+python pybuilder.py
+
+Commands
 --------
-options:
---python <ver_or_path>   Python identifier (version like 3.8 or a full path to python.exe)
---arch x86|x64           Target architecture (uses interpreter that matches)
---icon <path>            Optional icon file (.ico)
---name <exename>         Output exe name
--c                       Show pip install output (verbose)
--BC                      Show build output from PyInstaller
+help, ?                   Show this help text
+list                      Show discovered Python installations
+active                    Show active Python (the Python running this script)
 
-install_py <version> [x86|x64]   Download & install Python (host must be Windows)
-check_pyinstaller <python>  Check/install PyInstaller for chosen interpreter
-exit, quit              Exit this tool
-run <commandline>       Run a shell command (useful for advanced users)
-----------
-Examples:
+build <script> [opts]     Build .py -> .exe
+
+  Options:
+    --python <ver_or_path>   Python identifier (e.g. 3.8, 3.13) or full path to python.exe
+    --arch x86|x64           Target architecture (must match the interpreter)
+    --icon <path>            Optional .ico file
+    --name <exename>         Output exe name
+    -c                       Show pip install output (verbose)
+    -BC                      Show build output from PyInstaller
+
+install_py <version> [x86|x64]   Download & install Python (Windows only)
+check_pyinstaller <python>      Check/install PyInstaller for the chosen interpreter
+
+run <commandline>               Run an arbitrary shell command
+exit, quit                      Exit this tool
+
+
+Examples
+--------
 build myscript.py --python 3.8 --arch x86 --icon C:\icon.ico
 python pybuilder.py build myscript.py --python "C:\Python38-32\python.exe" --arch x86
 
-  Quick start
-  ===========
-  Open Files… or drag & drop into the main or playlist window
-  
-  Save/Load Playlist (.vpl/JSON) from the File/Playlist dialogs
-  
-  Double-click an audio file (if associated) or run VidPlayer.exe "path\to\file.mp3"
-  
-  View → Full Screen Artwork for an immersive now-playing view
-  
-  Help → Check for Updates… to open releases or download in-app with a progress bar
+Quick Start
+-----------
+- Open Files… or drag & drop audio files into the main window or playlist.
+- Save/Load playlists (.vpl / JSON) from the File/Playlist dialogs.
+- Double-click an audio file (if associated with VidPlayer) or run:
+- VidPlayer.exe "path\to\file.mp3"
+- View → Full Screen Artwork for an immersive now-playing view.
+- File → Play Audio CD… to rip or play an Audio CD (depending on your settings).
+- Help → Check for Updates… to open the Releases page or download the latest version in-app with a progress bar.
 
-  Tech
-  ====
 
-  Python + PySide6 (Qt for UI)3
-  
-  pygame (audio playback), mutagen (tags), Pillow (artwork), requests (updater), pypresence (Discord)
+Tech
+----
+- UI: Python + PySide6 (Qt)
+- Audio playback: pygame
+- Tags / metadata: mutagen
+- Artwork extraction: Pillow
+- Updater / GitHub releases: requests
+- Discord integration: pypresence
+- Audio CD (optional):
+- External cdda2wav / cdparanoia
+- External ffmpeg for transcoding
+- python-vlc + VLC DLLs for experimental Audio CD playback
+
 
 Features / Update / Fixes Log
-=============================
-Program Re-Wright in Python 3.12+ - v2.0.0
+-----------------------------
+v2.0.0 – Program rewritten for Python 3.12+
 
-Player UI Re-Done Again, Added Light/Dark Mode Feature, Added recent Files Feature - v2.0.1
+Major internal rework of the player.
 
-Added Art-Work Show Support, Added a Settings Window, Changed how the volume Slider works [Broke it], Added Playlist Support - v2.0.2
+v2.0.1 – UI refresh & new basics
 
-Added Auto-Play Next File in Playlist Feature [Build NOT Working, Not Released to the Public] - v2.0.3
+Player UI redesigned again.
 
-Fixed Auto-play Next file in Playlist Feature, Added more settings to the Settings Window - v2.0.4
+Added Light/Dark mode.
 
-Added a progress Loading Window that show only when you open More then 10 Files - v2.0.5
+Added Recent Files list.
 
-Added the New About Window - v2.0.6
+v2.0.2 – Artwork & Playlists
 
-updated the License Agreement, made the License and Features / Update Log Tab Load Text from a File, NO CODE NEEDED FOR SAID TEXT, Added a Auto-Check for updates Feature at start up, Added a Check for updates button to the About Menu - v2.0.6.1
+Added embedded artwork display.
 
-Added Discord RPC, Changed the default volume to 50.0 - v2.0.7
+Added Settings window.
 
-Added a Discord Rich Presence toggle in Settings (enables/disables RPC at runtime). When enabled the app holds a single Presence connection and PlaylistWindow uses it, Added an Always on Top setting in Settings, Added Full Screen entry to the Tools menu. Full-screen opens a fullscreen Toplevel that shows the artwork prominently and supports: [Escape to exit fullscreen, Clicking the artwork toggles play/pause, A small label shows filename and a close button], All new settings are saved to CONFIG_FILE and loaded at startup - v2.0.8
+Reworked volume slider (temporarily broke it).
 
-added External artwork persistence across restarts [saved to artmap.json], added Prev / Next buttons in the fullscreen overlay, Overlay auto-hide after a few seconds of inactivity and reappear on mouse move, Also keeps the "choose external artwork when embedded missing" flow, but now it persists the choice immediately. - v2.0.8.1
+Added playlist support.
 
-Re-placed the GUI [tkinter] With [pySide6 - Qt], [THE NEW GUI MAY NOT WORK RIGHT ON WINDOWS 10, THE NEW GUI WITH pySide6 WAS MADE FOR WINDOWS 11], Added a New Tool in the Tools Menu called, File info [Shows File metadata like, File Name, File Type / Extension, File Size (MB / KB), File Location (full path), Date & Time of Creation, Artist, Album, Year (if available), Track Length, Bitrate (if available), Copyright (if present in tags), Artwork (embedded or external), If no artwork → text message: “No Artwork Found”], Moved the Full Screen art-work from Tools menu → to the View menu (right below Playlist), Shortcut keys and functionality remain unchanged, Added a New them called Aero Glass, made to look like the Windows 7 Aero Glass them/Effects [this them may get updates to make it look better] - v2.0.9 BETA 1
+v2.0.3 – Auto-play (broken, unreleased)
 
-No update/Fix Log for v2.0.9 BETA 2-3
+First attempt at auto-play next file in playlist.
 
- Enable Aero checkbox grayed unless theme=Aero (existing), Full Screen Artwork moved to View menu (existing), Re-added update downloader w/ progress (existing), Fixed: Qt stylesheet unsupported props (existing), Fixed: Save/Load QAction triggers (existing) - v2.0.9 BETA 4
+Build was not working and was never publicly released.
 
-Fix: updater freeze/crash at 100% (safe thread cleanup), Enhancement: updater can download ANY asset type (no extension filtering), Fix: JSON files now created next to the EXE when compiled (PyInstaller-safe paths), Enhancement: Drag & Drop + multi-open now uses a small progress dialog listing files, adds them one-at-a-time (in a background thread), and auto-closes when finished, First version of vidplayer to have both x64 & x86 versions - v2.0.9 BETA 4.1
+v2.0.4 – Auto-play fixed
+
+Fixed auto-play next track behavior.
+
+Added more options to the Settings window.
+
+v2.0.5 – Batch-loading progress window
+
+Added a progress/loading window that appears when opening more than 10 files.
+
+v2.0.6 – New About window
+
+Added a new About window.
+
+v2.0.6.1 – License & update system improvements
+
+Updated License Agreement.
+
+License and Features/Update Log tabs now load text from external files (no hard-coded text).
+
+Added auto-check for updates on startup.
+
+Added a “Check for updates” button to the About menu.
+
+v2.0.7 – Discord RPC
+
+Added Discord Rich Presence integration.
+
+Changed default volume to 50.0.
+
+v2.0.8 – Fullscreen artwork & new settings
+
+Added a Discord Rich Presence toggle in Settings (enable/disable at runtime).
+
+App now maintains a single RPC connection shared with the playlist window.
+
+Added an “Always on top” setting in Settings.
+
+Added Full Screen entry (fullscreen artwork) to the Tools menu:
+
+Escape to exit fullscreen
+
+Clicking artwork toggles play/pause
+
+Small label showing filename + close button
+
+All new settings are saved to config.json and loaded at startup.
+
+v2.0.8.1 – Artwork persistence & overlay improvements
+
+External artwork paths are now persisted in artmap.json and restored across restarts.
+
+Added Prev/Next buttons in the fullscreen overlay.
+
+Overlay auto-hides after a few seconds of inactivity and reappears on mouse move.
+
+Kept the “choose external artwork when embedded missing” flow and made it persist immediately.
+
+v2.0.9 BETA 1 – PySide6 / Qt GUI + File Info
+
+Replaced the old Tkinter GUI with a PySide6 (Qt) GUI.
+
+Note: new GUI was designed for Windows 11; visuals may differ on Windows 10.
+
+Added a File Info tool under the Tools menu showing:
+
+File name, type/extension, size (KB/MB), full path
+
+Creation & modification date/time
+
+Artist, album, year (if available)
+
+Track length, bitrate (if available)
+
+Copyright tag
+
+Embedded or external artwork (or “No artwork found”)
+
+Moved Full Screen Artwork from Tools → View menu (shortcut behavior unchanged).
+
+Added a new Aero Glass theme inspired by Windows 7 Aero effects.
+
+v2.0.9 BETA 2–3
+
+No public update/fix log recorded for these builds.
+
+v2.0.9 BETA 4 – Polishing the new UI
+
+“Enable Aero Glass” checkbox correctly disabled unless theme is set to Aero.
+
+Full Screen Artwork confirmed under the View menu.
+
+Re-added update downloader with progress dialog.
+
+Fixed crashes caused by unsupported Qt stylesheet properties.
+
+Fixed Save/Load QAction triggers.
+
+v2.0.9 BETA 4.1 – Updater & batch-add upgrades, x64/x86 builds
+
+Fixed updater freeze/crash at 100% by safely cleaning up worker threads.
+
+Updater can now download any asset type from GitHub releases (no extension filtering).
+
+JSON files (config.json, recents.json, artmap.json) are now always created next to the EXE when compiled (PyInstaller-safe paths).
+
+Drag & Drop / multi-open now uses a progress dialog that:
+
+Lists each file being added
+
+Runs in a background thread
+
+Auto-closes when finished
+
+First VidPlayer release to ship both x64 and x86 builds.
+
+v2.0.9 BETA 4.2 – Audio CD ripping & VLC playback (current)
+
+Added File → Play Audio CD… and a Playlist → “Play Audio CD…” button.
+
+Implemented Audio CD ripping using cdda2wav (preferred) or cdparanoia:
+
+Rips tracks into a timestamped session folder and then into a shared Ripped CDA folder.
+
+Lets you choose output format: WAV, MP3, OGG or FLAC.
+
+Uses local ffmpeg.exe (or system ffmpeg) to transcode when a compressed format is chosen.
+
+Shows progress dialogs for both ripping and converting.
+
+Optionally adds ripped tracks to the current playlist.
+
+Cleans up temporary .inf files created by cdda2wav.
+
+Added optional VLC-based Audio CD playback:
+
+New “Use VLC for Audio CD playback (experimental)” setting in the Settings dialog.
+
+When enabled, “Play Audio CD…” opens a small VLC-backed CD player window (Play/Pause/Stop).
+
+Uses DLLs from bin/VLCLibs and python-vlc.
+
+General stability tweaks around CD detection, SCSI device selection and temporary folder handling.
