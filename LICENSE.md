@@ -1,4 +1,4 @@
-UPDATED VidPlayer License Agreement
+License Agreement
 ===================================
 
 Copyright (c) 2025 sonic Fan Tech / sonic Fan Games
