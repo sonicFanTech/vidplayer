@@ -80,7 +80,7 @@ Themes & Settings
 - Light
 - Dark
 - System Default
-- Aero Glass
+- Aero Glass - Removed IN V2.0.9-Release
 
 **Aero Glass:**
 
@@ -95,6 +95,7 @@ Themes & Settings
 - Auto-load last playlist on startup
 - Discord Rich Presence (on/off)
 - Use VLC for Audio CD playback (experimental)
+- 
 - Clear Recent Files
 
 ---
