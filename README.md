@@ -383,3 +383,15 @@ When enabled, “Play Audio CD…” opens a small VLC-backed CD player window (
 Uses DLLs from bin/VLCLibs and python-vlc.
 
 General stability tweaks around CD detection, SCSI device selection and temporary folder handling.
+
+This is the first Build of vidplayer that isn't a BETA Build
+
+V2.0.9-Release
+
+Added a visualizer, Shows under the timeline, can be Enabled or Disabled in settings, can change the FPS of the visualizer's Bars, can change the Window Size of the visualizer, can change the color of the visualizer's bars with a color HEX Code
+
+Fixed the Autoplay next file in playlist
+
+added a Playlist search bar → Text box in Playlist window that filters by filename (supports multiple matches, clear to see all again)
+
+Removed everything related to Aero Glass them/effect [THE AERO GLASS THEM/EFFEVT WAS JUST experimental]
