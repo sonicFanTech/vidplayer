@@ -386,12 +386,24 @@ General stability tweaks around CD detection, SCSI device selection and temporar
 
 This is the first Build of vidplayer that isn't a BETA Build
 
-V2.0.9-Release
+v2.0.9 Release – Playlist search & visualizer (current)
 
-Added a visualizer, Shows under the timeline, can be Enabled or Disabled in settings, can change the FPS of the visualizer's Bars, can change the Window Size of the visualizer, can change the color of the visualizer's bars with a color HEX Code
+Added a search box to the Playlist window:
 
-Fixed the Autoplay next file in playlist
+Filters the playlist by filename as you type.
 
-added a Playlist search bar → Text box in Playlist window that filters by filename (supports multiple matches, clear to see all again)
+Multiple matches are shown; non-matching tracks are hidden.
 
-Removed everything related to Aero Glass them/effect [THE AERO GLASS THEM/EFFEVT WAS JUST experimental]
+Clearing the search box restores the full playlist view.
+
+Added an FFT-based visualizer under the main timeline:
+
+Optional, toggleable in Settings.
+
+Winamp / Windows Media Player-style bar behaviour.
+
+Visualizer quality setting controls window size, FPS (default 24), and bar color (including hex).
+
+Fixed the “Autoplay next file in playlist” setting so it now correctly advances to the next track when enabled.
+
+Removed the experimental Aero Glass theme/effect to improve stability and simplify theming (Light / Dark / System Default only).
