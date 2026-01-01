@@ -1,7 +1,7 @@
 License Agreement
 ===================================
 
-Copyright (c) 2025 sonic Fan Tech / sonic Fan Games
+Copyright (c) 2023-2026 sonic Fan Tech
 
 VidPlayer is now **source-available**. This means:
 
