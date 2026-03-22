@@ -1,7 +1,7 @@
 About VidPlayer
 ===============
 VidPlayer is a fast, clean audio player for Windows built with **Python + PySide6**.  
-It focuses on the essentials—playlists, drag-and-drop, double-click to play—and a nostalgic **Windows 7-style Aero Glass** theme wrapped in a modern UI.
+It focuses on the essentials—playlists, drag-and-drop, double-click to play
 
 VidPlayer includes:
 
