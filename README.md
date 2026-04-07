@@ -22,12 +22,14 @@ A fast, clean Windows audio player built with **Python + PySide6**, with **porta
 
 ## Screenshots
 
-> Replace these paths if your repo uses a different screenshots folder.
-
 ![VidPlayer Main Window](./Screenshots/Modern/MainWindow.png)
 ![VidPlayer Playlist Window](./Screenshots/Modern/PlayListWindow.png)
-![VidPlayer Settings Window](./Screenshots/Modern/SettingsWindow.png)
+![VidPlayer Settings Window Taab 1](./Screenshots/Modern/SettingsWindow.png)
+![VidPlayer Settings Window Tab 2](./Screenshots/Modern/SettingsWindow2.png)
+![VidPlayer Settings Window Tab 3](./Screenshots/Modern/SettingsWindow3.png)
+![VidPlayer Settings Window Tab 4](./Screenshots/Modern/SettingsWindow4.png)
 ![VidPlayer File Info Window](./Screenshots/Modern/InfoWindow.png)
+![VidPlayer ACD Ripping ool](./Screenshots/Modern/VPEACDRippingTool.png)
 
 ---
 
@@ -151,7 +153,7 @@ This section is only for running the Python source directly. If you are using a 
 
 ### Option A — Use **pyIDE** (recommended for editing / running / building)
 
-If you want a more guided way to work with the VidPlayer source, you can use **SFT pyIDE**, your custom Python IDE.
+If you want a more guided way to work with the VidPlayer source, you can use **SFT pyIDE**, A custom Python IDE.
 
 pyIDE is a Windows PySide6 Python IDE with:
 - a tabbed editor
