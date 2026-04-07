@@ -186,8 +186,8 @@ Download the version you want from the pyIDE release page, then install it or ex
 Open your VidPlayer `.py` source file in pyIDE.
 
 **Screenshot placeholder:**
-```md
-![pyIDE Main Window - open the VidPlayer source here](./Screenshots/README_PLACEHOLDERS/pyIDE_MainWindow.png)
+
+[pyIDE Main Window - open the VidPlayer source here](./Screenshots/README_PLACEHOLDERS/pyIDE_MainWindow.png)
 
 #### 4. Install the required VidPlayer packages
 
