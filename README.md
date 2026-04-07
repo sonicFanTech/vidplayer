@@ -188,7 +188,6 @@ Open your VidPlayer `.py` source file in pyIDE.
 **Screenshot placeholder:**
 ```md
 ![pyIDE Main Window - open the VidPlayer source here](./Screenshots/README_PLACEHOLDERS/pyIDE_MainWindow.png)
-```
 
 #### 4. Install the required VidPlayer packages
 
@@ -204,9 +203,8 @@ Notes:
 - `py7zr` is used by the Python updater, with fallback support for external 7-Zip tools when needed.
 
 **Screenshot placeholder:**
-```md
-![pyIDE Terminal or package install step](./Screenshots/README_PLACEHOLDERS/pyIDE_InstallDependencies.png)
-```
+
+[pyIDE Terminal or package install step](./Screenshots/VP_pyIDE\mainwindow.png)
 
 #### 5. Run VidPlayer from pyIDE
 
@@ -227,10 +225,9 @@ python vidplayer_2.0.9.1.2_PASSOVER2_portable_vlc_fixed_updater_settings.py "D:\
 ```
 
 **Screenshot placeholders:**
-```md
-![pyIDE Run button / output panel](./Screenshots/README_PLACEHOLDERS/pyIDE_RunInside.png)
-![pyIDE External Console mode](./Screenshots/README_PLACEHOLDERS/pyIDE_ExternalConsole.png)
-```
+
+[pyIDE Run button / output panel](./Screenshots/VP_pyIDE\runin.png)
+[pyIDE External Console mode](./Screenshots/VP_pyIDE\consolerun.png)
 
 #### 6. Build VidPlayer to EXE with pyIDE
 
@@ -249,11 +246,8 @@ pyinstaller --noconfirm --onefile --windowed VidPlayerUpdater_Python_Reworked_wi
 ```
 
 **Screenshot placeholder:**
-```md
-![pyIDE PyInstaller compiler window](./Screenshots/README_PLACEHOLDERS/pyIDE_PyInstallerCompiler.png)
-```
 
----
+[pyIDE PyInstaller compiler window](./Screenshots/VP_pyIDE\buildwindow.png)
 
 ### Option B — Standard Python / Command Prompt workflow
 
