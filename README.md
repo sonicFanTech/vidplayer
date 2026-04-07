@@ -185,8 +185,6 @@ Download the version you want from the pyIDE release page, then install it or ex
 
 Open your VidPlayer `.py` source file in pyIDE.
 
-**Screenshot placeholder:**
-
 <img width="1198" height="804" alt="mainwindow" src="https://github.com/user-attachments/assets/3b419938-6319-4713-99c3-b14e4b0a89ba" />
 
 #### 4. Install the required VidPlayer packages
@@ -202,8 +200,6 @@ Notes:
 - `numpy` is used for visualizer features.
 - `py7zr` is used by the Python updater, with fallback support for external 7-Zip tools when needed.
 
-**Screenshot**
-
 <img width="1198" height="804" alt="mainwindow" src="https://github.com/user-attachments/assets/e409972f-bbec-4084-b525-7af3990f151d" />
 
 #### 5. Run VidPlayer from pyIDE
@@ -211,6 +207,10 @@ Notes:
 You can run VidPlayer in either of pyIDE's run modes:
 - **Run inside pyIDE** for integrated output
 - **Run in external console** for a real terminal window
+
+  
+<img width="1423" height="844" alt="runin" src="https://github.com/user-attachments/assets/b6064f1c-5593-4b62-b421-9cdb464bd4ce" />
+<img width="1418" height="819" alt="consolerun" src="https://github.com/user-attachments/assets/51520bb1-f520-461a-8499-cb741218b2cc" />
 
 Main source file example:
 
@@ -223,9 +223,6 @@ You can also pass a file directly:
 ```bash
 python vidplayer_2.0.9.1.2_PASSOVER2_portable_vlc_fixed_updater_settings.py "D:\Music\song.mp3"
 ```
-
-<img width="1423" height="844" alt="runin" src="https://github.com/user-attachments/assets/b6064f1c-5593-4b62-b421-9cdb464bd4ce" />
-<img width="1418" height="819" alt="consolerun" src="https://github.com/user-attachments/assets/51520bb1-f520-461a-8499-cb741218b2cc" />
 
 #### 6. Build VidPlayer to EXE with pyIDE
 
