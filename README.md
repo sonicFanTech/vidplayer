@@ -4,10 +4,10 @@
 ![Python](https://img.shields.io/badge/Python-3.13.9-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![UI](https://img.shields.io/badge/UI-PySide6-41CD52?style=for-the-badge&logo=qt&logoColor=white)
 ![Playback](https://img.shields.io/badge/Playback-VLC%203.0.23-FF8800?style=for-the-badge&logo=vlcmediaplayer&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Pre--Release-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Release-brightgreen?style=for-the-badge)
 ![Updater](https://img.shields.io/badge/Updater-External%20Python-blue?style=for-the-badge)
 
-A fast, clean Windows audio player built with **Python + PySide6**, with **portable VLC playback**, playlist tools, subtitle / lyrics support, artwork viewing, Discord Rich Presence, and an external updater.
+A fast, clean Windows audio player built with **Python + PySide6**, with **portable VLC playback**, **custom .ico-based UI icons**, a reworked **Full Screen Artwork** mode, a more detailed built-in **File Info** window, subtitle / lyrics support, Discord Rich Presence, and an external updater.
 
 ---
 
@@ -37,11 +37,13 @@ A fast, clean Windows audio player built with **Python + PySide6**, with **porta
 
 - Portable **VLC-based playback engine**
 - Updated portable VLC runtime DLLs to **VLC 3.0.23**
+- Custom **.ico-based** button and menu icon system
+- Reworked **Full Screen Artwork** mode with better artwork refresh behavior
+- Built-in **File Info** window with deeper media / codec details
+- VPLogo placeholder support for no-artwork / no-file-loaded states
 - Playlist save / load support (`.vpl` / JSON)
 - Drag-and-drop audio loading
 - Batch add dialog for large file imports
-- File Info window with tags, bitrate, dates, size, and artwork
-- Full-screen artwork view
 - Recent Files menu
 - Discord Rich Presence toggle
 - Subtitle / lyrics support with styling controls
@@ -50,6 +52,7 @@ A fast, clean Windows audio player built with **Python + PySide6**, with **porta
 - Experimental live VLC visualizer data mode
 - External updater with hash-based partial updates and rollback manifests
 - External Audio CD ripper tool support
+
 
 ---
 
@@ -71,10 +74,12 @@ A fast, clean Windows audio player built with **Python + PySide6**, with **porta
 - Batch loading dialog for large imports
 
 ### Artwork / Info
-- Full-screen artwork mode
+- Reworked Full Screen Artwork mode
 - Embedded artwork support
 - External artwork fallback support
-- File Info dialog with metadata and artwork preview
+- VPLogo placeholder support when no artwork is available
+- File Info dialog with expanded media, container, codec, and artwork details
+- Multi-file File Info list support when more than one track is loaded
 
 ### Subtitles / Lyrics
 - Auto-load sidecar subtitle / lyrics files
@@ -136,6 +141,12 @@ VidPlayer\
 │  │  ├─ libvlc.dll
 │  │  ├─ libvlccore.dll
 │  │  └─ plugins\
+│  ├─ icons\
+│  │  ├─ VPLogo.ico
+│  │  ├─ buttons\
+│  │  └─ menubar\
+│  ├─ ffprobe.exe
+│  ├─ ffmpeg.exe
 │  └─ VPACDRipper.exe
 ├─ update\
 │  ├─ VidPlayerUpdater.exe
@@ -322,6 +333,7 @@ VidPlayer supports:
 - System default theme
 - Mini Mode
 - Dockable playlist mode
+- Full Screen Artwork mode
 
 Older Aero Glass-era wording from previous builds has been replaced by the newer portable VLC branch and newer UI workflow.
 
@@ -344,11 +356,13 @@ Older Aero Glass-era wording from previous builds has been replaced by the newer
 
 Current README focus:
 - newer portable VLC branch
-- VLC runtime updated from **3.0.21** to **3.0.23**
-- external Python updater rework
-- shared updater settings integration
-- safer rollback support
-- improved Mini Mode / playlist docking / visualizer handling
+- release build status
+- custom .ico-based UI icon system
+- reworked Full Screen Artwork behavior
+- improved built-in File Info workflow
+- VPLogo placeholder integration
+- updater / visualizer / docking / subtitle systems carried forward from the newer branch
+
 
 For the full version history, see [CHANGELOG.md](./CHANGELOG.md).
 
