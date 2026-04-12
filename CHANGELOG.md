@@ -4,6 +4,81 @@ A running log of VidPlayer changes across builds.
 
 ---
 
+## v2.0.9.3 Release X64
+
+### Version / app info
+- Version string updated to `v2.0.9.3 Release X64`
+- Continues the portable VLC-based VidPlayer branch
+- Continues the external updater workflow
+- This release mainly focuses on a major UI / artwork / icon / File Info refresh
+
+### Main UI / icon refresh
+- Added custom `.ico`-based UI icon support across the player
+- VidPlayer now loads custom icons from:
+  - `bin\icons\buttons\`
+  - `bin\icons\menubar\`
+  - `bin\icons\VPLogo.ico`
+- Main playback controls now use the custom icon set
+- Menu bar actions now use custom icons for supported actions
+- Added VPLogo placeholder support into the main player UI
+- Built-in fallback transport icons used in the older updated areas were replaced by the new custom icon workflow
+
+### Full Screen Artwork
+- Reworked Full Screen Artwork mode to behave more like a true full-screen takeover view
+- Full-screen artwork controls now use the custom button icon set
+- Full-screen artwork now updates automatically when the current track changes
+- Full-screen artwork now refreshes the shown artwork instead of only keeping the image from when the window first opened
+- Full-screen artwork now shows `VPLogo.ico` when the current track has no embedded artwork
+- Full-screen placeholder behavior now better matches the main window artwork display
+
+### Artwork / placeholder handling
+- Main window artwork placeholder behavior was reworked
+- `VPLogo.ico` is now used directly in the artwork display area when:
+  - no file is loaded
+  - the current file has no embedded artwork
+- Full-screen artwork placeholder behavior was aligned with the main window artwork behavior
+- General artwork refresh / placeholder logic was improved during track changes and UI refreshes
+
+### File Info window
+- Reworked the built-in File Info window using logic based on the EveryPlay-style MediaInfo tool workflow
+- Added deeper `ffprobe`-based media inspection support
+- Added a more detailed multi-tab File Info layout
+- Added a Basic info tab with expanded media / container / stream details
+- Added a Codecs tab for stream / codec information
+- Added an Extra / Raw tab for raw probe-style information
+- Added better artwork handling in the File Info window
+- Added support for showing a loaded-file list in File Info when more than one track is loaded in VidPlayer
+- File Info now better matches the EveryPlay MediaInfo workflow while staying built into VidPlayer
+
+### ffprobe / ffmpeg path handling
+- Reworked `ffprobe` / `ffmpeg` lookup behavior for the built-in File Info system
+- VidPlayer now prefers these locations first:
+  - `bin\ffprobe.exe`
+  - `bin\ffmpeg.exe`
+- Compatibility fallback locations are still supported for older / alternate folder layouts
+
+### VLC loading / startup handling
+- `VPLogo.ico` now replaces the older green VP badge in the VLC DLL loading window
+- Improved startup error handling while the VLC loading window is active
+- Fatal / startup error message boxes are now forced to appear over the VLC DLL loading window instead of behind it
+- Startup polish / stability was improved while integrating the new logo / icon behavior
+
+### Mini Mode / playlist / carried-forward systems
+- Mini Mode now uses the custom control icon set too
+- Added custom menu icons for dock / view actions
+- Corrected Dock Left / Dock Right icon assignment in the updated icon workflow
+- Visualizer, subtitle / lyrics, updater, docking, and Audio CD systems from the newer branch continue in this release
+
+### General fixes / polish
+- Fixed multiple startup / UI integration issues introduced while reworking the icon system
+- Fixed helper / placeholder issues caused during logo / artwork integration
+- Fixed artwork placeholders so they show in the intended locations
+- Fixed full-screen artwork refresh / placeholder sync issues
+- Fixed File Info behavior so it works better with multiple loaded files
+- General polish / cleanup to the UI refresh work across multiple windows and view modes
+
+---
+
 ## v2.0.9.1.2 Pre-Release X64
 
 ### Version / app info
