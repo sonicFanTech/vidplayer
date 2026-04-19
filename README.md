@@ -17,9 +17,8 @@ A Windows audio player built with **Python + PySide6**, using **portable VLC pla
 - **Developer:** <https://github.com/sonicFanTech>
 - **Update package source:** <https://github.com/sonicFanTech/customSetupInstallersPackageDownloads/releases>
 - **Main feature / build log:** [CHANGELOG.md](./CHANGELOG.md)
-- **Main feature / build log:** [UPDATE IDEAS](./UPDATE_IDEAS.md)
+- **UPDATE IDEAS:** [UPDATE IDEAS](./UPDATE_IDEAS.md)
 
-- 
 ---
 
 ## Current Status
